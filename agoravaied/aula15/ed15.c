@@ -33,17 +33,23 @@
 // -> ex:  float* a = (float*) malloc(n * sizeof(float)); -> está pedindo pra alocar na memória 5 vezes 4 bytes(tamanho do float) ai ficará:
 /*
 
-      H220  
-      H216 [###] 4 /
-      H212 [###] 3 /
-      H208 [###] 2 / - -> 5 . 4 -> 20 bytes
-      H204 [###] 1 /
-      H200 [###] 0 / -> endereço base
+          |  H220  
+          |  H216 [###] 4 /
+    Heap  |  H212 [###] 3 /
+          |  H208 [###] 2 / - -> 5 . 4 -> 20 bytes
+          |  H204 [###] 1 /
+          |  H200 [###] 0 / -> endereço base
+
+    Stack | S100 [H200] a -> quer dizer que o float *a fica na memória stack e aponta pro h200 na memória heap onde está o vetor        
 
 */
 // ai o malloc aloca essa qtd de bytes na memória heap e retorna o endereço base dessa região alocada (H200) 
 // ai o "a" nosso que está ali em cima como exemplo( ex: ) é um ponteiro para um float apontará para a região de memória que o malloc 
 // retornou que é o endereço base, as caixinhas ali que eu fiz na mão (H200 [###] 0)
+
+
+// int *a = (int *) malloc(10 * sizeof(int)); -> int *a (fica na memoria stack) e o resto na memória heap
+// recapitulando -> malloc -> aloca um bloco de memória na memória heap, faz uma alocação dinâmica, e ela retorna o endereço base.
 
 #include <stdio.h>
 
