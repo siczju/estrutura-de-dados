@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-void troca(int *x, int *y){
+void troca(int *x, const int *y){
     int aux = *x;
     *x = *y;
     *y = aux;

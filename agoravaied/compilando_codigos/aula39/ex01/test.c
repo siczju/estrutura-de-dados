@@ -10,6 +10,6 @@ void main(){
 // porém nesse curso depois do -o sempre usaremos o nome do arquivo sem ".", ou seja só test
 // gcc test.c -o test
 
-// gcc -c float_vector.c -> usamos o "-c" quando não tem main, qnd n é um arquivo de execução
+// se a gente compilar um arquivo .c que não tem MAIN a gente usa -c "gcc -c NomeDoArquivo -o"  e o resultado sera "NomeDoArquivo.o" 
 
 // para copiar arquivos para sua pasta -> "cp ../nomedoarquivo"

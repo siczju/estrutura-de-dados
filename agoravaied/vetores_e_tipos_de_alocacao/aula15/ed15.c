@@ -27,10 +27,10 @@
 
 // Funções Dinâmicas:
 // malloc() -> aloca um bloco de bytes consecutivos na heap e devolve o endereço desse bloco
-// tipo* v = (tipo*) malloc(n* sizeof(tipo)); -> "n" -> é q qtd de elementos que eu quero alocar multiplicados pelos tipos do elementos que
+// tipo* v = (tipo*) malloc(n* sizeof(tipo)); -> "n" -> é q qtd de elementos que eu quero alocar multiplicados pelo tipo do elementos que
 // eu quero alocar
 // supnha que desejamos alocar dinâmicamente (heap) um vetor de 5 floats (float a[5];)
-// -> ex:  float* a = (float*) malloc(n * sizeof(float)); -> está pedindo pra alocar na memória 5 vezes 4 bytes(tamanho do float) ai ficará:
+// -> ex:  float* a = (float*) malloc(5 * sizeof(float)); -> está pedindo pra alocar na memória 5 vezes 4 bytes(tamanho do float) ai ficará:
 /*
 
           |  H220  

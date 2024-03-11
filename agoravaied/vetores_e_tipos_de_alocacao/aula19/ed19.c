@@ -17,4 +17,7 @@ void main(){
 
         free(v2);
         v2 = NULL;
+
+        free(p);
+        p = NULL;
 }

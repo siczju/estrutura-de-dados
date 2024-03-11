@@ -8,10 +8,11 @@ int soma(int x, int y){
     printf("&x = %p, x = %d\n", &x, x);
     printf("&y = %p, y = %d\n", &y, y);
     printf("&z = %p, z = %d\n\n", &z, z);
+    return z;
 }
 
 void main(){
-    int a = 10, b = 20, c;
+    int a = 10, b = 20, c = 0;
 
     puts("### ANTES DE CHAMAR A FUNCAO");
     printf("&a = %p, a = %d\n", &a, a);

@@ -14,7 +14,7 @@ typedef struct _linked_list{
 SNode *SNode_create(int val){
     SNode *snode = (SNode*) calloc(1, sizeof(SNode));
     snode->val = val;
-    snode ->next = NULL; // pois não tem proximo nó, so quando criarmos dnv
+    snode->next = NULL; // pois não tem proximo nó, so quando criarmos dnv
 
     return snode;
 }

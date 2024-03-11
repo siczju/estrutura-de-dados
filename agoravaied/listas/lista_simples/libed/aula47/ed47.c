@@ -44,18 +44,12 @@
        L -> [10] <- [2] <- [4]
 
      -> listas circulares duplamente encadeadas -> mesma coisa que a duplamente mesclada com a circular onde:
-     -> no ultimo nó o ponteiro posterior apontará pro primeiro nó
-     -> no primeiro nó o ponteiro anterior apontará pro ultimo nó
+     -> no ultimo nó o ponteiro posterior apontará pro primeiro nó e o anterior pro nó anterior
+     -> no primeiro nó o ponteiro anterior apontará pro ultimo nó e o posterior pro nó seguido na lista
 
             | - - - - - - - - - - |
-     L ->  [10]  ->  [2]    ->  [4]  
-     L -> [Zelo] -> [Cezin] -> [Felipe]  
+     L ->  [10]  <-->  [2]    <-->  [4]  
+     L -> [Zelo] <--> [Cezin] <--> [Felipe]  
             | - - - - - - - - - - - |
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-void main(){
-    
-}

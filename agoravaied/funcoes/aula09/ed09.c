@@ -1,6 +1,6 @@
 //                          FUNÇÃO
 // funções -> estruturas que agrupam blocos de comandos retornando um único valor ao final da execução.
-// O que acontece com a memória do computador qnd a gente chama uma função e passa os parãmetros para la? (linha de baixo)
+// O que acontece com a memória do computador qnd a gente chama uma função e passa os parâmetros para la? (linha de baixo)
 // é feito uma cópia do valor que é passado no parâmetro que pode ser alterado dentro da função sem afetar a variável da qual ela foi gerada.
 #include <stdio.h>
 

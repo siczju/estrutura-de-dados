@@ -7,7 +7,7 @@
 int main(){
 
 int a = 10;
-int b, c;
+int b = 0, c = 0;
 
 printf("&a = %p, a = %d\n", &a, a);
 printf("&b = %p, b = %d\n", &b, b);
@@ -20,7 +20,8 @@ printf("&a = %p, a = %d\n", &a, a);
 printf("&b = %p, b = %d\n", &b, b);
 printf("&c = %p, c = %d\n", &c, c);
 
-// para mostrar endereço -> %p
+// para mostrar endereço -> %p, &a
+// para mostrar valor do endereço -> %d, a
 
 return 0;
 }

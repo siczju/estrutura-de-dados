@@ -4,6 +4,6 @@
 // ponteiro esta apontando -> ele guarda essa região de memória
 // sempre guarda o endereço de uma variável que possui um tipo
 
-// * -> conteudo de um endereço
 // & -> endereço
+// * -> conteudo de um endereço
 

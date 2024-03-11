@@ -15,7 +15,7 @@
     tipo, desloque pra mim, 1 vezes a quantidade de bytes desse tipo (nesse caso 4, por ser int), ou seja S100 + (1 x 4) = S104
 
     (v + 3) = S100 + (3 x 4) = S112 -> (qtde de deslocamento apartir do endereço somado VEZES numero de bits do tipo de variavel)
-    v[3] = *(v + 3) = *(S116) = 16
+    v[3] = *(v + 3) = *(S112)
 
     S100 -> endereço base do vetor
 

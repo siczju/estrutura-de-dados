@@ -3,19 +3,14 @@
 
     exercicios:
 
-                Vetores Estáticos
+                Vetores Estáticos | Dinâmicos
     -> criar função que recebe o ponteiro de um vetor e seu tamanho e imprima os elementos do vetor
     -> criar função que recebe o ponteiro de um vetor via colchetes[] e seu tamanho e imprima os elementos do vetor
     -> Imprima os endereços de memória e valores do vetor na main e dentro de cada função
 
-                Vetores Dinâmicos
-    -> criar função que recebe o ponteiro de um vetor e seu tamanho e imprima os elementos do vetor
-    -> criar função que recebe o ponteiro de um vetor via colchetes[] e seu tamanho e imprima os elementos do vetor
-    -> imprima os endereços de memoria e valores do vetor na main e dentro de cada função;
-
 */
     // como passar um vetor como parâmetro p uma função
-
+    // int v[] = int *v
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -33,14 +28,14 @@
 
 void main(){
 
-    puts("--- vetor estático ---");
+    puts("--- vetor estatico ---");
     int vs[5] = {0, 10, 20, 30, 40};
 
     print_vetor(vs, 5); // vs -> armazena o endereço do primeiro indice então n precisamos passar &vs
     soma_vetor_com_escalar(vs, 5, 9);
     print_vetor(vs, 5);
 
-    puts("--- vetor dinâmico ---");
+    puts("--- vetor dinamico ---");
     int *vh = (int*) calloc(5, sizeof(int));
 
     for(int i = 0; i < 5; i++)

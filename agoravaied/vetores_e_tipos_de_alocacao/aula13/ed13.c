@@ -1,4 +1,4 @@
-// vetores e alocalção estática e dinâmica
+// vetores e alocação estática e dinâmica
 // vetores -> é a forma mais simples de estruturarmos uma lista de elementos
 // int v[10]; -> vetor com 10 elementos, resservamos um espaço continuo para armazenar os 10 valores inteiros. -> se cada int ocupa 4 bytes..
 // ...    a declaração reserva um espaço de memória de 40 bytes

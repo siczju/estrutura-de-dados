@@ -1,7 +1,10 @@
 /*
 
- pasta apps -> colocar todos os programas da nossa biblioteca, todos os executaveis
- pasta bin  -> guarda todos os programas compilados -> arquivos binários dos programas
+  pasta include -> deixar os arquivos de cabeçalhos .h
+  pasta obj -> deixar todos arquivos compilados do tad .o
+  pasta src (source = fonte) -> deixar os arquivos fontes (implementação do tipo abstratos de dados)
+  pasta apps -> colocar todos os programas da nossa biblioteca, todos os executaveis
+  pasta bin  -> guarda todos os programas compilados -> arquivos binários dos programas
 
 remover arquivo (rm) -> rm obj/* -> irá remover todos os arquivos da pasta obj
   ver a arvore (tree) -> ver arvore do seu projeto

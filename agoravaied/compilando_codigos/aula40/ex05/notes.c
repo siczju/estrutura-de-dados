@@ -3,6 +3,8 @@
   pasta include -> deixar os arquivos de cabeçalhos .h
   pasta obj -> deixar todos arquivos compilados do tad .o
   pasta src (source = fonte) -> deixar os arquivos fontes (implementação do tipo abstratos de dados)
+  pasta apps -> colocar todos os programas da nossa biblioteca, todos os executaveis
+  pasta bin  -> guarda todos os programas compilados -> arquivos binários dos programas
 
   para compilar -> na outra aula tinhamos que passar o "gcc -c" pois não tem main, porém agora nosso arquivo não está mais no diretório root
   ele está na pasta source -> src/float_vector.c -> ficaria "gcc -c ./src/float_vector.c -I ./include -o ./obj/float_vector.o" 
