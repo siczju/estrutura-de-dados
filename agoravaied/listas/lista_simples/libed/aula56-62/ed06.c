@@ -159,6 +159,7 @@ void LinkedList_remove(LinkedList *L, int val)
         if(p == L->end) L->end = previous;
         free(p);
     }
+    
     }
 
 
