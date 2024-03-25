@@ -1,4 +1,4 @@
-//      Remover elementos da lista
+//      Destruir uma lista
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -136,32 +136,52 @@ void LinkedList_remove(LinkedList *L, int val)
     {
         printf("Elemento %d nao encontrado na lista.\n", val);
         return;
-    }else if(L->begin->val == val) { // caso o elemento estiver na cabeça da lista
+    }
+    else if (L->begin->val == val)
+    { // caso o elemento estiver na cabeça da lista
         L->begin = L->begin->next;
 
-        if(L->end = L->begin) // caso a lista tiver apenas um nó (se nao tivesse essa linha o end iria apontar para uma região inexistente)
-           L->end = NULL;
+        if (L->end == L->begin) // caso a lista tiver apenas um nó (se nao tivesse essa linha o end iria apontar para uma região inexistente)
+            L->end = NULL;
 
         free(p);
-    }else{ // elemento no meio da lista
-    
+    }
+    else
+    { // elemento no meio da lista
+
         SNode *previous = L->begin; // previous -> anterior
         p = L->begin->next;
-    while (p != NULL && p->val != val)
-    {
-        previous = p; // previous = previous->next
-        p = p->next;
-    }
-    if(p != NULL){ // valor "val" foi encontrado
-        previous->next = p->next;
+        while (p != NULL && p->val != val)
+        {
+            previous = p; // previous = previous->next
+            p = p->next;
+        }
+        if (p != NULL)
+        { // valor "val" foi encontrado
+            previous->next = p->next;
+            free(p);
+        }
+        if (p == L->end)
+            L->end = previous;
         free(p);
     }
-        if(p == L->end) L->end = previous;
-        free(p);
-    }
-    
-    }
+}
 
+void LinkedList_destroy(LinkedList **L_ref){
+
+    LinkedList *L = *L_ref;
+    SNode *p = L->begin;
+    SNode *aux = NULL;
+
+    while(p != NULL) {
+        aux = p;
+        p = p->next;
+        free(aux);
+    }
+    free(L);
+
+    *L_ref = NULL;
+}
 
 void main()
 {
@@ -176,4 +196,7 @@ void main()
     LinkedList_remove(L, 15);
 
     LinkedList_print(L);
+
+    LinkedList_destroy(&L);
+    printf("L == NULL: %d\n", L == NULL);
 }
