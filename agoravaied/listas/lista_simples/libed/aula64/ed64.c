@@ -1,5 +1,6 @@
-//      Destruir uma lista
-
+//      Funções (Contar qtde de elementos da lista, retornar o 1º elemento, Retornar o ultimo elemento e  retornar um elemento na posição i)
+// Guardar uma nova variavel na struct da lista (size), pois se for uma lista mt grande e usar a função vai ser mt custoso
+// por causa dessa variavel, vamos alterar as funções (is_empty, createList, addFirst, addlast_slow e fast, printList, remove)
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -14,6 +15,7 @@ typedef struct _linked_list
 {
     SNode *begin;
     SNode *end;
+    size_t size;
 } LinkedList;
 
 SNode *SNode_create(int val)
@@ -30,6 +32,7 @@ LinkedList *LinkedList_create()
     LinkedList *L = (LinkedList *)calloc(1, sizeof(LinkedList));
     L->begin = NULL;
     L->end = NULL;
+    L->size = 0;
 
     return L;
 }
@@ -42,11 +45,20 @@ void LinkedList_print(const LinkedList *L)
         printf(" [%d] -> ", p->val);
 
     printf("NULL\n");
+
+    if (L->end == NULL) {
+        printf("L->end = NULL\n");
+    }
+    else {
+        printf("L->end = %d\n", L->end->val);
+    }
+
+    printf("size: %d\n", L-> size);
 }
 
 bool LinkedList_isEmpty(LinkedList *L)
-{ //      NEW
-    return (L->begin == NULL && L->end == NULL);
+{ 
+    return L->size == 0;
 }
 
 /*
@@ -67,6 +79,7 @@ void LinkedList_add_first(LinkedList *L, int val)
 
     snode->next = L->begin;
     L->begin = snode;
+    L->size++;
 }
 
 void LinkedList_add_last_slow(LinkedList *L, int val)
@@ -86,6 +99,7 @@ void LinkedList_add_last_slow(LinkedList *L, int val)
         }
         p->next = snode;
     }
+    L->size++;
 }
 
 // temos um ponteiro pro começo da lista (begin), que tal termos um ponteiro para o final(end*) dela? Assim se for inserir outro elemento no final da lista, n precisaria percorrer ela toda (caso fosse varios nós)
@@ -99,6 +113,8 @@ void LinkedList_add_last_fast(LinkedList *L, int val)
         L->begin = L->end = snode;
     else
         L->end->next = L->end = snode;
+
+    L->size++;
 }
 
 /*
@@ -127,7 +143,7 @@ void LinkedList_remove(LinkedList *L, int val){
     p->next = aux;
 }
 */
-
+/*
 void LinkedList_remove(LinkedList *L, int val)
 {
     SNode *p = L->begin;
@@ -148,7 +164,6 @@ void LinkedList_remove(LinkedList *L, int val)
     }
     else
     { // elemento no meio da lista
-
         SNode *previous = L->begin; // previous -> anterior
         p = L->begin->next;
         while (p != NULL && p->val != val)
@@ -164,6 +179,36 @@ void LinkedList_remove(LinkedList *L, int val)
         if (p == L->end)
             L->end = previous;
         free(p);
+    }
+        L->size--;
+}
+*/
+
+void LinkedList_remove(LinkedList *L, int val) {
+    if (!LinkedList_isEmpty(L)) {
+        SNode *prev = NULL;
+        SNode *pos = L->begin;
+
+        while (pos != NULL && pos->val != val) {
+            prev = pos;
+            pos = pos->next;
+        }
+
+        // se achou um nó com valor val
+        if (pos != NULL) {
+            if (L->end == pos) {
+                L->end = prev;
+            }
+            if (L->begin == pos) {
+                L->begin = L->begin->next;
+            }
+            else {
+                prev->next = pos->next;
+            }
+
+            free(pos);
+            L->size--;
+        }
     }
 }
 
@@ -183,6 +228,20 @@ void LinkedList_destroy(LinkedList **L_ref){
     *L_ref = NULL;
 } // a qtde de calloc q existe na lista tem que ser a mesma qtde para frees
 
+// size_t -> qnd quer guardar tamanho de algo, é um apelido para unsigned long
+size_t LinkedList_size_slow(const LinkedList *L){
+    size_t size = 0;
+
+    for(SNode* p = L->begin; p != NULL; p = p->next)
+    size++;
+
+    return size;
+}
+
+size_t LinkedList_size(const LinkedList *L){
+    return L->size;
+}
+
 void main()
 {
 
@@ -196,7 +255,8 @@ void main()
     LinkedList_remove(L, 15);
 
     LinkedList_print(L);
+    // printf("size: %d", LinkedList_size_slow(L));
 
     LinkedList_destroy(&L);
-    printf("L == NULL: %d\n", L == NULL);
+
 }
