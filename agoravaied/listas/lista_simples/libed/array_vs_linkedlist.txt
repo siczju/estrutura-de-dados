@@ -1,0 +1,11 @@
+Array (vantagens):
+ -> Acesso direto (v[i]): rápido (pq a gente tem os dados contidos na memória por isso conseguimos acessar o indice direto, inves de percorrer todos os elementos que nem na lista.) 
+Array (desvantagens):
+ -> Tamanho do array não é flexivel
+
+Lista (vantagens):
+ -> Tamanho flexível
+Lista (desvantagens):
+ -> Acesso de um elemento é sequencial (necessario ir de um elemento para outro, para achar um)
+ -> Dados não são contidos na memória (por isso nao conseguimos acessar eles diretamente)
+ -> percorrer a lista inteira é lento
