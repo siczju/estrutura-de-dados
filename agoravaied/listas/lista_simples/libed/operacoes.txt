@@ -1,0 +1,23 @@
+    Que funções faremos nesse tópico de listas encadeadas simples?
+
+    Em aula:
+ -> Inserção na cabeça (ínicio) da lista.
+ -> Impressão dos elementos da lista.
+ -> Inserção na cauda (fim) da lista.
+ -> Verificar se a lista está vazia e retornar verdadeiro/falso.
+ -> Contar o número de elementos da lista.
+ -> Retornar o primeiro elemento.
+ -> Retornar o último elemento.
+ -> Retornar um elemento na posição i.
+ -> Remover elementos da lista.
+ -> Destruir a lista (free)
+
+    Para fazer sozinho (treino)
+ -> Inserir um elemento em uma dada posição
+ -> Inverter uma lista
+ -> Copiar/clonar uma lista 
+ -> Apagar todos os elementos da lista
+ -> Concaternar de duas listas
+ -> Ordenação de uma lista
+ -> Buscar um dado elemento na lista e retornar seu ponteiro
+ -> Inserção ordenada
