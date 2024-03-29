@@ -13,11 +13,11 @@
  -> Destruir a lista (free)
 
     Para fazer sozinho (treino)
- -> Inserir um elemento em uma dada posição
- -> Inverter uma lista
- -> Copiar/clonar uma lista 
- -> Apagar todos os elementos da lista
- -> Concaternar de duas listas
- -> Ordenação de uma lista
+ -> Inserir um elemento em uma dada posição.
+ -> Inverter uma lista.
+ -> Copiar/clonar uma lista.
+ -> Apagar todos os elementos da lista.
+ -> Concatenar de duas listas.
+ -> Inserção ordenada.
+ -> Ordenação de uma lista.
  -> Buscar um dado elemento na lista e retornar seu ponteiro
- -> Inserção ordenada
