@@ -1,7 +1,6 @@
-/*
+
     Lista -> Lista simplesmente encadeada -> é uma sequência de elementos encadeados
     Diferença de lista para fila/pilha -> diferença são as restrições que existem
     pilha -> insere no topo e remove no topo
     fila -> insere no final e remove no inicio 
     lista -> insere onde quiser, remove onde quiser...
-*/
