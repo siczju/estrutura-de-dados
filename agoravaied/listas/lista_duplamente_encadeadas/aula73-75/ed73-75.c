@@ -77,7 +77,7 @@ void list_print(List *L)
         printf("L->end = %d\n", L->end->val);
         printf("L->begin = %d\n", L->begin->val);
     }
-    printf("L->size = %d\n", L->size);
+    printf("L->size = %d\n\n", L->size);
 }
 void list_invertedPrint(List *L)
 {
@@ -99,7 +99,7 @@ void list_invertedPrint(List *L)
         printf("L->end = %d\n", L->end->val);
         printf("L->begin = %d\n", L->begin->val);
     }
-    printf("L->size = %d\n", L->size);
+    printf("L->size = %d\n\n", L->size);
 }
 void list_addFirst(List *L, int val)
 {
@@ -185,13 +185,30 @@ void main()
 {
     List *L = list_create();
 
+    puts("Remove 99");
+    list_remove(L, 99);
+    list_print(L);
+    list_invertedPrint(L);
+
     list_addFirst(L, 12);
     list_addLast(L, 17);
     list_addFirst(L, 21);
+    list_addFirst(L, 21);
     list_addLast(L, 42);
+    list_print(L);
+    list_invertedPrint(L);
 
-    list_remove(L, 17);
+    puts("Remove 99");
+    list_remove(L, 99);
+    list_print(L);
 
+    puts("Remove 42");
+    list_remove(L, 42);
+    list_print(L);
+    list_invertedPrint(L);
+
+    puts("Remove 21");
+    list_remove(L, 21);
     list_print(L);
     list_invertedPrint(L);
 }
