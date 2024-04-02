@@ -141,7 +141,7 @@ void list_remove(CircList *L, int value)
     {
         Node *p = L->begin;
 
-        for (int i = 0; i <= L->size; i++)
+        for (int i = 0; i < L->size; i++)
         {
             if (p->val == value)
             {
