@@ -1,0 +1,16 @@
+    Curso de arvore binária, no canal: https://youtu.be/dcOCsxiuKeU?si=r9d6dEI3G_bELS7K
+
+    Arvore binária -> estrutura de dados dinâmica (ela aumenta e diminui), e é estrutura ótima para busca
+
+    Estrutura da arvore:
+        -> teremos uma estrutura chamada Arvore Binária que vai ter uma raiz (onde inicia a arvore)
+        -> teremos um nó (typedef struct), tendo 3 campos (val, direita*, esquerda*)
+
+    -> a arvore começa como nula (raiz = NULL)
+    -> se formos inserir na arvore um nó com valor 500 com a raiz nula, inserimos um novo nó na arvore (arvore->raiz = newNode) com o valor 500, com os ponteiros esquerda e direita NULL pois é o primeiro nó da arvore.
+
+    -> agora se formos adicionar um nó com o valor 250, a arvore ja não é mais nula, vemos se o valor desse nó é menor que o nó ja adicionado na lista (500), sim eh menor, então faremos o ponteiro da esquerda (500) apontar para esse novo nó (250), se ele fosse maior ai seria o ponteiro da direita que apontaria.
+
+    -> agora vamos inserir o valor 750, como é maior que 500, vai pro ponteiro da direita, fazendo o mesmo processo.
+
+    -> não tem como ter 2 elementos iguais em uma arvore
