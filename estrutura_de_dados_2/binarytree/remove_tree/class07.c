@@ -140,14 +140,24 @@ No *remover(No *raiz, int chave)
                 return NULL;
             }
             else{
-                if(raiz->esquerda != NULL || raiz->direita != NULL){ // tem 1 filho
-                    No *aux;
-                    if(raiz->esquerda != NULL) // se tiver filho na esquerda
+                if(raiz->esquerda == NULL || raiz->direita == NULL){ // tem 1 filho
+                    No *aux = NULL;
+                    if(raiz->esquerda != NULL) // se tiver filho. na esquerda
                         aux = raiz->esquerda; // aux pega o endereço do filho da esquerda
                     else // se tiver filho na direita
                         aux = raiz->direita; // aux pega o endereço do filho da esquerda
                     free(raiz);
                     return aux;
+                }
+                else{
+                // Se tiver 2 filhos, voce tem q pegar algum nó para substituir ele, voce pode escolher ir no filho da esquerda e pegar o neto mais a direita, ou se voce pegar o filho da direita tem q ir no neto mais a esquerda
+                    No *aux = raiz->esquerda;
+                    while(aux->direita != NULL)
+                        aux = aux->direita;
+                    raiz->conteudo = aux->conteudo;
+                    aux->conteudo = chave;
+                    raiz->esquerda = remover(raiz->esquerda, chave);
+                    return raiz;
                 }
             }
         }
@@ -191,7 +201,7 @@ void main()
             printf("Tamanho: %d\n", tamanho(arv.raiz));
             break;
         case 3:
-            printf("Qual valor deseja busca? ");
+            printf("Qual valor deseja buscar? ");
             scanf("%d", &valor);
             printf("Resultado da busca: %d\n", buscar(arv.raiz, valor));
             break;

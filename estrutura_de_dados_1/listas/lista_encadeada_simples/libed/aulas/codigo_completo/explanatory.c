@@ -73,7 +73,7 @@ void list_print(const LinkedList *L)
         printf("L->end = %d\n", L->end->val);
 
     // Imprime o tamanho da lista
-    printf("L->size = %zu\n", L->size);
+    printf("L->size = %d\n", L->size);
 }
 
 // Função para verificar se a lista está vazia
@@ -280,7 +280,7 @@ void list_concatenate(LinkedList *L1, LinkedList *L2)
         return;
     }
 
-    SNode *p = L1->end; // Inicia a variável p no último nó da lista L1
+    SNode *p;  // Inicia a variável p no último nó da lista L1
     p = L2->begin;       // Atualiza a variável p para o início da lista L2
     L1->end = L2->end;   // Atualiza o ponteiro de fim da lista L1 para o fim da lista L2
     L1->size += L2->size; // Atualiza o tamanho da lista L1 somando o tamanho da lista L2
@@ -348,9 +348,6 @@ void main()
 
     // Adiciona alguns elementos à lista
     list_addFirst(L, 12);
-    list_addLast(L, 14);
-    list_addFirst(L, 21);
-    list_addLast(L, 45);
 
     list_removeNode(L, 12); // Remove um nó da lista
 
