@@ -130,7 +130,6 @@ void list_remove(LinkedList *L, int index)
         L->begin = L->end = NULL;
         L->size--;
         return;
-        ,0
     }
     if (index == (L->size - 1))
     { // last element
