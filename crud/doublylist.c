@@ -49,14 +49,15 @@ void list_print(LinkedList *L)
         printf("L -> %d\n", L->begin->val);
         return;
     }
-    printf("index ->    ");
+    /*printf("index ->    ");
     Node *aux = L->begin;
     for (int i = 0; i < L->size; aux = aux->right, i++)
         printf("[%d] ->  ", i);
-
     printf("NULL\n");
+    */
 
-    printf("L->begin -> ");
+
+    printf("List -> ");
     aux = L->begin;
     for (int i = 0; i < L->size; aux = aux->right, i++)
         printf("[%d] -> ", aux->val);
