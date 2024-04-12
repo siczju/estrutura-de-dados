@@ -145,7 +145,7 @@ No *remover(No *raiz, int chave)
                     if(raiz->esquerda != NULL) // se tiver filho. na esquerda
                         aux = raiz->esquerda; // aux pega o endereço do filho da esquerda
                     else // se tiver filho na direita
-                        aux = raiz->direita; // aux pega o endereço do filho da esquerda
+                        aux = raiz->direita; // aux pega o endereço do filho da direita
                     free(raiz);
                     return aux;
                 }
